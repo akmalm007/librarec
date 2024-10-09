@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Search Box</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .search-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-form {
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid search-container">
+        <form class="search-form">
+            <div class="input-group">
+                <select class="custom-select" id="category" aria-label="Category">
+                    <option selected>Choose category</option>
+                    <option value="1">Books</option>
+                    <option value="2">Electronics</option>
+                    <option value="3">Clothing</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <input type="text" class="form-control" placeholder="Search for items..." aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
