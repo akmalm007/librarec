@@ -3,7 +3,7 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="./index.php">LibraRec</a>
+                        <img src="./gambar/library-recommendation-high-resolution-logo-removebg-preview.png" height="85x" alt="logo"/>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -22,7 +22,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
+                                    <a class="nav-link" href="./about.php">About</a>
                                 </li>
                             </ul>
                         </div>
