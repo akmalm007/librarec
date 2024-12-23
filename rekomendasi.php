@@ -45,10 +45,11 @@ include 'koneksi.php';
             <div class="row">
                 <?php
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && $pencarian != "") {
-                    $query = "SELECT b.biblio_id, b.judul, b.kategori, b.penulis, b.tahun, ROUND(100.0 * m.confidence) AS confidence FROM buku b 
-                            LEFT JOIN model m ON m.consequents_id = b.biblio_id  
-                            WHERE m.antecedents_id IN (SELECT DISTINCT biblio_id FROM buku WHERE judul LIKE '%$pencarian%') AND m.confidence >= 0.5 
-                            GROUP BY b.biblio_id";
+                    $query = "SELECT DISTINCT b.biblio_id, b.judul, b.kategori, b.penulis, b.tahun 
+                              FROM buku b
+                              JOIN model m ON m.antecedents_id = b.biblio_id 
+                              WHERE b.judul LIKE '%$pencarian%' OR b.kategori LIKE '%$pencarian%'
+                              GROUP BY b.biblio_id";
 
                     $q_tampil_rekomendasi = mysqli_query($db, $query);
 
@@ -68,7 +69,6 @@ include 'koneksi.php';
                                                     <strong>Kategori: </strong> <?php echo $r_tampil_rekomendasi['kategori']; ?><br>
                                                     <strong>Penulis: </strong> <?php echo $r_tampil_rekomendasi['penulis']; ?><br>
                                                     <strong>Tahun: </strong> <?php echo $r_tampil_rekomendasi['tahun']; ?><br>
-                                                    <strong>Confidence: </strong> <?php echo $r_tampil_rekomendasi['confidence']; ?>
                                                 </p>
                                             </div>
                                             <img class="card-img-top" src="gambar/vector-modern-book-cover-design-template_1050343-242-removebg-preview.png" alt="Book cover">
